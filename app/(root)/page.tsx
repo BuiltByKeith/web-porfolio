@@ -1,10 +1,12 @@
 import Hero from "@/components/Hero";
+import Navbar from "@/components/Navbar";
 
 const Home = () => {
   return (
     <main>
-      <Hero imageUrl="/images/hero.png"/>
-      <div className="text-5xl">Welcome to my web portfolio</div>;
+      <Hero imageUrl="/images/hero.png" />
+      <Navbar />
+      
     </main>
   );
 };
