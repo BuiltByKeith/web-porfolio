@@ -175,27 +175,27 @@ export default function Hero({
     >
       {/* Background Image */}
       <div
-        className={`absolute inset-0 bg-cover bg-center transition-transform duration-[1800ms] ease-out ${
+        className={`absolute inset-0 bg-cover bg-center transition-transform duration-1800 ease-out ${
           visible ? "scale-100" : "scale-105"
         }`}
         style={{ backgroundImage: `url(${imageUrl})` }}
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/70 to-black/90" />
+      <div className="absolute inset-0 bg-linear-to-b from-black/40 via-black/70 to-black/90" />
 
       {/* Circuit Canvas (desktop only) */}
       {isDesktop && (
         <canvas
           ref={canvasRef}
-          className="absolute inset-0 z-[1] pointer-events-none opacity-10"
+          className="absolute inset-0 z-1 pointer-events-none opacity-10"
         />
       )}
 
       {/* Spotlight (desktop only) */}
       {isDesktop && (
         <div
-          className="absolute inset-0 z-[2] pointer-events-none"
+          className="absolute inset-0 z-2 pointer-events-none"
           style={{
             background: `radial-gradient(circle 380px at ${spotlight.x}% ${spotlight.y}%, rgba(255,255,255,0.07) 0%, transparent 70%)`,
           }}
