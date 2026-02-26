@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 interface HeroProps {
@@ -30,11 +31,7 @@ function initParticles(cols: number, rows: number): Particle[] {
   }));
 }
 
-export default function Hero({
-  imageUrl,
-  tagLine = "Bring your Ideas to Life",
-  subtitle = "Gather, Build, and Deploy",
-}: HeroProps) {
+export default function Hero({ imageUrl }: HeroProps) {
   const [visible, setVisible] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
 
@@ -174,12 +171,18 @@ export default function Hero({
       className="relative w-full min-h-150 flex items-center justify-center md:justify-start overflow-hidden"
     >
       {/* Background Image */}
-      <div
-        className={`absolute inset-0 bg-cover bg-center transition-transform duration-1800 ease-out ${
-          visible ? "scale-100" : "scale-105"
-        }`}
-        style={{ backgroundImage: `url(${imageUrl})` }}
-      />
+      <div className="absolute inset-0 overflow-hidden">
+        <Image
+          src={imageUrl}
+          alt="Hero background"
+          fill
+          priority
+          quality={75}
+          className={`object-cover transition-transform duration-1800 ease-out ${
+            visible ? "scale-100" : "scale-105"
+          }`}
+        />
+      </div>
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-linear-to-b from-black/40 via-black/70 to-black/90" />
@@ -228,7 +231,7 @@ export default function Hero({
           <span className="text-gradient bg-linear-to-r from-blue-600  to-blue-300 bg-clip-text text-transparent">
             d
           </span>{" "}
-          websites, they usually work 🍀
+          websites, they somehow work 🍀
         </h1>
 
         <p className="text-white/50 text-xs sm:text-sm tracking-[0.25em] uppercase font-light">
