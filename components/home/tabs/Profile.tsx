@@ -126,7 +126,7 @@ const Profile = () => {
 
         {/* Resume */}
         <a
-          href="/files/resume.pdf"
+          href="/files/Resume.pdf"
           target="_blank"
           rel="noreferrer"
           className="flex items-center justify-center gap-2 border border-gray-200 rounded-xl py-4 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
