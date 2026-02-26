@@ -21,31 +21,13 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="w-full bg-white sticky top-0 z-50 flex justify-center py-2.5 sm:py-3">
-        {/* Mobile — horizontal scroll strip */}
-        <div className="flex sm:hidden w-full overflow-x-auto scrollbar-none px-3 gap-1">
+      <nav className="w-full bg-white sticky top-0 z-50 flex justify-center py-2.5 sm:py-3 px-3 sm:px-0 border-0 shadow-none outline-none">
+        <div className="flex items-center bg-[#1c1c1e] rounded-xl p-1 gap-1 w-full sm:w-auto">
           {TABS.map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`shrink-0 px-4 py-2 text-xs rounded-lg transition-all duration-200 whitespace-nowrap font-medium ${
-                activeTab === tab
-                  ? "bg-linear-to-r from-blue-600 via-red-400 to-yellow-300 text-gray-900 font-bold shadow-sm"
-                  : "text-gray-400 bg-gray-100 hover:bg-gray-200"
-              }`}
-            >
-              {tab}
-            </button>
-          ))}
-        </div>
-
-        {/* sm+ — centered dark pill */}
-        <div className="hidden sm:flex items-center bg-[#1c1c1e] rounded-xl p-1 gap-1">
-          {TABS.map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`relative px-4 md:px-5 py-2 text-xs md:text-sm rounded-lg transition-all duration-200 whitespace-nowrap font-medium ${
+              className={`flex-1 sm:flex-none px-3 sm:px-4 md:px-5 py-2 text-xs md:text-sm rounded-lg transition-all duration-200 whitespace-nowrap font-medium ${
                 activeTab === tab
                   ? "bg-linear-to-r from-blue-600 via-red-400 to-yellow-300 text-gray-900 font-bold shadow-sm"
                   : "text-gray-400 hover:text-gray-200 hover:bg-white/5"
@@ -57,7 +39,6 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Tab content */}
       <main className="w-full min-h-[60vh]">{TAB_CONTENT[activeTab]}</main>
     </>
   );
