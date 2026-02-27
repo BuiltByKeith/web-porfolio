@@ -13,7 +13,7 @@ const projects = [
     description:
       "A comprehensive housing management system with mapping. Built with Laravel Framework, MySQL Database and deployed on a dockerized environment.",
     tags: ["Laravel", "MySQL", "HTML", "CSS", "JS/AJAX"],
-    live: "http://apps.cmu.edu.ph/bdms",
+    live: "http://apps.cmu.edu.ph/cmubdms",
     repo: "https://github.com/BuiltByKeith",
     image: "/images/projects/bdms.png",
   },
